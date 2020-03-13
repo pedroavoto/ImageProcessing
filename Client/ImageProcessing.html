@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<title>Image Processging</title>
+
+<script src="image.js"></script>
+
+</head>
+<body>
+
+<div class="center" id="container">
+	<div id="header">
+		<h1> Image Processing</h1>
+	</div>
+	<div id="body">
+	
+	<div>
+        <input style="" type="file" accept=".png, .jpg, .jpeg" onchange="loadFile(event)" />
+		<p><img style="padding: 20px;" id="inputImage" width="200" /></p>
+		
+    </div>
+	    <div id="imageProcessor">
+        <div style="float: left; width: 30%;">                
+                <div>
+                    <input type="radio" name="radioClick" id="chkbx_horizontal" value="FLIP_HORIZONTAL"> <span>Flip Horizontal</span>
+                </div>
+                <div>
+                    <input type="radio" name="radioClick" id="chkbx_vertical" value="FLIP_VERTICAL"> <span>Flip Vertical</span>
+                </div>
+                <div>
+                    <input type="radio" name="radioClick" id="chkbx_rotate" onclick="ShowHideDiv1()" value="ROTATE"> <span>Rotate</span><br>
+                    <div id="rotateAttr" style="display: none">
+						Degree (-/+):
+						<input type="text" id="txtDegreeRot" />
+					</div>
+                </div>
+				<div>
+                    <input type="radio" name="radioClick" id="chkbx_grayscale" value="GRAYSCALE"> <span>Grayscale</span>
+                </div>
+				<div>
+                    <input type="radio" name="radioClick" id="chkbx_resize" onclick="ShowHideDiv2()" value="RESIZE"> <span>Resize</span><br>
+                    <div id="widthHeight" style="display: none">
+						Width:
+						<input type="text" id="txtWidthRes" />
+						<br>
+						Height:
+						<input type="text" id="txtHeightRes" />
+					</div>
+                </div>
+				 <div>
+                    <input type="radio" name="radioClick" id="chkbx_thumbnail" value="THUMBNAIL"> <span>Thumbnail</span>
+                </div>
+                <div>
+                    <input type="radio" name="radioClick" id="chkbx_rotate_left" value="ROTATE_LEFT"> <span>Rotate Left</span>
+                </div>
+                <div>
+                    <input type="radio" name="radioClick" id="chkbx_rotate_right" value="ROTATE_RIGHT"> <span>Rotate Right</span>
+                </div>            
+                <div>
+                    <button onclick="UserAction()"> Convert </button>
+                </div>
+     </div>
+</div>
+
+<div class="row text-center">
+	<img id="outputImage" width="200" class="img-responsive center-block">
+</div>
+
+</body>
+
+</html> 
